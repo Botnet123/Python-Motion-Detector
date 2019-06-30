@@ -24,7 +24,7 @@ while True:
     thres_frame = cv2.dilate(thres_frame, None, iterations=2)
 
     # find all contours in the thres_frame
-    (_, cnts, _) = cv2.findContours(thres_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cnts, _ = cv2.findContours(thres_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # filter the contours that have more than 1000 pixels
     for contour in cnts:
